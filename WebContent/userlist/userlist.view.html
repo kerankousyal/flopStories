@@ -1,0 +1,12 @@
+ <div ng-repeat="user in vm.userList" class="row">    
+                          <div class="col-sm-10">
+                           <a href="#/userlist/{{user.username}}"> <h3>{{user.firstname}} {{user.lastname}}</h3> </a>
+                            <h4><span class="label label-default">{{user.username}}</span></h4><h4>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge">{{user.rank}}</span>
+                          </div> 
+                        </div>

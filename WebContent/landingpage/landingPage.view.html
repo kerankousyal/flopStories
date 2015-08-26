@@ -1,0 +1,108 @@
+<!-- content -->
+                        
+                        <div class="col-sm-12" id="featured"> 
+                        
+                        <div class="full col-sm-9">
+                          <div class="page-header text-muted">
+                          Featured
+                          </div> 
+                        </div>
+                        
+                        <!--/top story-->
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>{{vm.featuredStory.storyname}}</h3>
+                            <p>{{vm.featuredStory.shortdescription}}</p>
+                            <h4><span class="label label-default">{{vm.featuredStory.ownername}}</span></h4><h4>
+                            <a href="#">Likes</a>
+                            <span class="badge">30</span>
+                            <small class="text-muted">• <a href="#/storylist/{{vm.featuredStory._id.$oid}}">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge">3</span>
+                          </div> 
+                          </div>
+                        </div>
+                        
+                        <div class="col-sm-12" id="stories">  
+                          <div class="page-header text-muted divider">
+                            Top Stories
+                          </div>
+                        </div>
+                        
+                        
+                        <!--/stories-->
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>Dramatically Raise the Value of Any Piece of Content</h3>
+                            <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
+                            <a href="#">Views</a>
+                            <span class="badge">40</span>
+                            <small class="text-muted">• <a href="post.html" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">FlopRank</a>
+                            <span class="badge">5</span>
+                          </div> 
+                        </div>
+                        
+                        
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>14 Useful Sites for Designers</h3>
+                            <h4><span class="label label-default">devgarage.com</span></h4><h4>
+                            <a href="#">Views</a>
+                            <span class="badge">23</span>
+                            <small class="text-muted">• <a href="post.html" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/smiley1.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge">1</span>
+                          </div>
+                        </div>
+                        
+                        <div class="col-sm-12" id="players">  
+                          <div class="page-header text-muted divider">
+                            Top Players
+                          </div>
+                        </div>
+                        <!--/players-->
+                        
+                        <div ng-repeat="topUser in vm.allTopUsers" class="row">    
+                          <div class="col-sm-10">
+                            <h3>{{topUser.firstname}} {{topUser.lastname}}</h3>
+                            <h4><span class="label label-default">{{topUser.username}}</span></h4><h4>
+                            <small class="text-muted">1 hour ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge">{{topUser.rank}}</span>
+                          </div> 
+                        </div>
+                        
+                        
+                        
+                        <div class="row divider">    
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+                        
+                        <div class="row" id="footer">    
+                         
+                          <div class="col-sm-6" style="float:left;">
+                            <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
+                          </div>
+                          
+                          <div class="col-sm-6">
+                            <a href="#" class="pull-right"> © FlopStories.</a>
+                          </div>
+                        </div>
+                        

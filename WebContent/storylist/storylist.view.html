@@ -1,0 +1,13 @@
+ <div ng-repeat="story in vm.storyList" class="row">    
+                          <div class="col-sm-10">
+                            <a href="#/storylist/{{story._id.$oid}}"><h3>{{story.storyname}}</h3></a>
+                            <h4><span class="label label-default">{{story.ownername}}</span></h4><h4>
+                            <small class="text-muted">1 hour ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge"></span>
+                          </div> 
+                        </div>

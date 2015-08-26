@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>FlopStorys</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="app-content/bootstrap.min.css" rel="stylesheet">
+        <link href="app-content/flop.css" rel="stylesheet">
+        
+        <!-- Quill -->
+		<link rel="stylesheet" href="//cdn.quilljs.com/0.16.0/quill.snow.css" />
+		<link rel="stylesheet" href="app-content/profile-page.css" />
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <!-- CSS code from Bootply.com editor -->
+        
+        <style type="text/css">
+        a:hover { cursor:pointer; } 
+
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body>
+        
+        <div class="wrapper">
+		    <div class="box">
+			        <div class="row">
+			          
+			            <!-- sidebar -->
+			            <div class="column col-sm-3" id="sidebar">
+			                <a class="logo" href="#">FpS</a>
+			                <ul class="nav">
+			                    <li class="active"><a href="#featured">Featured</a>
+			                    </li>
+			                    <li><a href="#/userlist">Players</a>
+			                    </li>
+			                    <li><a href="#/storylist">Stories</a>
+			                    </li>
+			                </ul>
+			                <ul class="nav hidden-xs" id="sidebar-footer">
+			                    <li>
+			                      <a href="http://www.bootply.com"><h3>Flopstories</h3>fun intended!!</a>
+			                    </li>
+			                </ul>
+			            </div>
+			            <!-- /sidebar -->
+			          
+			            	<!-- main -->
+				            <div class="column col-sm-9" id="main">
+				                <div class="padding">
+				                
+				                
+						                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+				                
+						                <ul class="nav navbar-nav navbar-right">
+											<li><a ng-show="!isLoggedInUser" href="#/login">Login</a><a ng-show="isLoggedInUser" href="#/login">Logout</a></li>
+										</ul>
+										
+										<div ng-view></div>
+				            	</div><!-- /padding -->
+				            </div>
+				            <!-- /main -->
+			          </div>
+		        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+     <script src="app-services/register.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+     <script src="app-services/stories.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+    
+    <!--  service for getting landing page data -->
+    <script src="app-services/landingpage.service.js"></script>
+    
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+    <script src="landingpage/landingPage.controller.js"></script>
+    <script src="storylist/storylist.controller.js"></script>
+     <script src="userlist/userlist.controller.js"></script>
+     <script src="userdetail/userdetail.controller.js"></script>
+     <script src="storydetail/storydetail.controller.js"></script>
+    
+    <!-- Quill -->
+    <script src="//cdn.quilljs.com/0.16.0/quill.min.js"></script>
+	<script src="js/ng-quill.js"></script>
+    
+</body>
+</html>

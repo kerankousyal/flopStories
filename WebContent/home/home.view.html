@@ -1,0 +1,102 @@
+<p>
+	<a href="#/login" ng-show="isLoggedInUser" class="btn btn-primary">Logout</a>
+</p>
+
+<tabset justified="true"> <tab heading="Profile">
+
+<div class="row profile">
+	<div class="col-md-3">
+		<div class="profile-sidebar">
+			<!-- SIDEBAR USERPIC -->
+			<div class="profile-userpic">
+				<img
+					src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg"
+					class="img-responsive" alt="">
+			</div>
+			<!-- END SIDEBAR USERPIC -->
+			<!-- SIDEBAR USER TITLE -->
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">{{vm.user.username}}</div>
+				<div class="profile-usertitle-job">FlopoMeter</div>
+			</div>
+			<!-- END SIDEBAR USER TITLE -->
+			<!-- SIDEBAR BUTTONS -->
+			<div class="profile-userbuttons">
+				<button type="button" class="btn btn-success btn-sm">Follow</button>
+				<button type="button" class="btn btn-danger btn-sm">Message</button>
+			</div>
+			<!-- END SIDEBAR BUTTONS -->
+			<!-- SIDEBAR MENU -->
+
+			<!-- END MENU -->
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="profile-usertitle-name">
+			<label>FirstName : </label><input type="text"
+				value="{{vm.user.firstname}}" disabled />
+		</div>
+		<div class="profile-usertitle-name">
+			<label>LastName : </label><input type="text"
+				value="{{vm.user.lastname}}" disabled />
+		</div>
+
+	</div>
+</div>
+
+</tab> <tab heading="Story Board">
+
+<div class="col-md-12">
+	<div class="profile-content">
+		<div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+		<form name="form" novalidate role="form">
+			<div class="profile-usertitle-name">
+
+				<div class="form-group"
+					ng-class="{ 'has-error': form.storyName.$dirty && form.storyName.$error.required }">
+					<input type="text" name="storyName" id="storyName"
+						class="form-control" ng-model="vm.story.storyName"
+						placeholder="Story Name" /> <span
+						ng-show="form.storyName.$dirty && form.storyName.$error.required"
+						class="help-block">Story name is required</span>
+				</div>
+
+				<div class="form-group"
+					ng-class="{ 'has-error': form.storyDesc.$dirty && form.storyDesc.$error.required }">
+					<input type="text" name="storyDesc" id="storyDesc"
+						class="form-control" ng-model="vm.story.storyDesc"
+						placeholder="Story Description" /> <span
+						ng-show="form.storyDesc.$dirty && form.storyDesc.$error.required"
+						class="help-block">Story Description is required</span>
+				</div>
+
+				<div class="form-group"
+					ng-class="{ 'has-error': form.storySubCat.$dirty && form.storySubCat.$error.required }">
+					<input type="text" name="storySubCat" id="storySubCat"
+						class="form-control" ng-model="vm.story.storySubCat"
+						placeholder="Sub-Category" /> <span
+						ng-show="form.storySubCat.$dirty && form.storySubCat.$error.required"
+						class="help-block">Sub-Category is required</span>
+				</div>
+
+			</div>
+			<div class="profile-usertitle-name"></div>
+			<div class="profile-usertitle-name"></div>
+			<div class="profile-usertitle-name"></div>
+			<ng-quill-editor ng-model="vm.story.message" theme="snow"
+				toolbar="true" link-tooltip="true" image-tooltip="true"
+				toolbar-entries="font size bold list bullet italic underline strike align color background link image"
+				editor-required="true" error-class="input-error"></ng-quill-editor>
+
+			<input type="submit" ng-click="submit()" value="Save" /> <img
+				ng-if="vm.dataLoading"
+				src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+		</form>
+	</div>
+</div>
+</tab> <tab heading="FlopOmeter"> </tab> </tabset>
+
+<center></center>
+<br>
+<br>
+

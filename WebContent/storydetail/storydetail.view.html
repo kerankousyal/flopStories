@@ -1,0 +1,43 @@
+ <div class="row">    
+                          <div class="col-sm-10">
+                          <h3>{{vm.storyDetail.storyname}}</h3>
+                            <h4><span class="label label-default">{{vm.storyDetail.shortdescription}}</span></h4><h4>
+                            </h4>
+                            {{vm.storyDetail.storycontent}}
+                            
+                             
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-left"><img src="images/joker.jpg" class="img-circle"></a>
+                            <a href="#">Rank</a>
+                            <span class="badge"></span>
+                          </div> 
+</div>
+<div class="row">
+<!-- if user is logged in show the comments text area and submit button,once he submits update the page with comments,sort comments by date,the owner of the story should be able to delete any comment-->
+                             <div class="form-group">
+                             	<input type="text" ng-show="!isLoggedInUser" ng-model="vm.commentDetail.username" class="form-control"  placeholder="Your Name"/>
+                             </div>
+                             <div class="form-group">
+  									
+  									<label for="comment">Comments:</label>
+                             		<textarea class="form-control" ng-model="vm.commentDetail.comments" placeholder=" your comments here..">
+                             
+                            		 </textarea>
+                            </div>
+                            <div class="form-group">
+                            	<a type="button" class="btn btn-info" ng-click="submitComments()">Post Comment</a>
+                            </div>
+                             <div class="list-group" ng-repeat="comment in vm.storyDetail.comments">
+                             		<div class="panel panel-info">
+										    <div class="panel-heading">{{comment.commentedUser}} | {{comment.commentedDate}}</div>
+										    <div class="panel-body">
+											    {{comment.comments}}
+											 </div>
+									</div>
+							</div>
+ <!-- comments end -->       
+ 
+ <!-- if user is logged in show the thumbs up link-->
+ <!-- thumbsup end -->                 
+</div>
